@@ -1,17 +1,28 @@
 var lugares=32;
 var filas= Math.ceil(lugares/5);
 
-var fila='';
+var fila;
 var cont=1;
 //Armar todas las filas
 for (let index = 0; index < filas; index++) {
-    fila+='<div class="fila">';
+    fila=document.createElement("div");
+    fila.className='fila';
+    let espacio;
     //arma cada fila
     for (let e = 1; e <= 5; e++) {
-        fila+=`<div class="espacio">E${cont}</div>`;
+        espacio=document.createElement("div");
+        espacio.className='espacio';
+        espacio.addEventListener("click",function(e){
+           debugger;
+            if(e.target.style.backgroundColor=="gray"){
+                e.target.style.backgroundColor="white";
+            }else{
+                e.target.style.backgroundColor="gray";
+            }
+        });
+        espacio.innerText='E'+cont;
         cont++;
-     //fila+=`<div class="espacio">E` + cont + `</div>`;    
+        fila.append(espacio);        
     }
-    fila+="</div>";
+    document.getElementById("laboratorio").append(fila);
 } 
-document.getElementById("laboratorio").innerHTML=fila;
