@@ -1,0 +1,32 @@
+/*320px a 480px: pequeños
+481px a 1024px: Medianos
+1025px-> Grandes
+*/
+*{
+    margin: 0;
+    padding: 0;
+    /*Evitar que el tamaño de los elementos se vea 
+    afectado por los margenes y padding*/
+    box-sizing: border-box;
+}
+
+.card{
+    border: 1px solid gray;
+    padding: .5rem;
+    margin: .5rem;
+    display: inline-block;
+    width: 95%;
+}
+/*481px a 1024px*/
+@media (min-width:481px) and (max-width:1024px) {
+    .card{
+        width: 45%;
+    }
+}
+
+/*1025px en adelante*/
+@media (min-width:1025px) {
+    .card{
+        width: 30%;
+    }
+}
