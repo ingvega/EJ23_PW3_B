@@ -1,0 +1,82 @@
+/*320px a 480px: pequeños
+481px a 1024px: Medianos
+1025px-> Grandes
+*/
+*{
+    margin: 0;
+    padding: 0;
+    /*Evitar que el tamaño de los elementos se vea 
+    afectado por los margenes y padding*/
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+}
+
+body > *{
+    background-color: aquamarine;
+}
+
+aside{
+    background-color: antiquewhite;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+}
+/*
+aside{
+    width: 20%;
+}*/
+/*
+main{
+    width: 80%;
+}
+*/
+main{
+    display: flex;
+    flex-direction: column;
+}
+.card{
+    border: 1px solid gray;
+    padding: .5rem;
+    margin: .5rem;
+    display: inline-block;
+    width: 95%;
+}
+/*481px a 1024px*/
+@media (min-width:481px) and (max-width:1024px) {
+    .card{
+        width: 45%;
+    }
+    main{
+        width: 80%;
+        flex-direction: row;
+    }
+    aside{
+        width: 20%;
+    }
+    .container{
+        flex-direction: row;
+    }
+}
+
+/*1025px en adelante*/
+@media (min-width:1025px) {
+    .card{
+        width: 30%;
+    }
+    main{
+        width: 80%;
+        flex-direction: row wrap;
+    }
+    aside{
+        width: 20%;
+    }
+    .container{
+        flex-direction: row;
+    }
+}
