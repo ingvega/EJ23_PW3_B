@@ -1,0 +1,50 @@
+/*320px a 480px: pequeños
+481px a 1024px: Medianos
+1025px-> Grandes
+*/
+*{
+    margin: 0;
+    padding: 0;
+    /*Evitar que el tamaño de los elementos se vea 
+    afectado por los margenes y padding*/
+    box-sizing: border-box;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+}
+
+.grupo{
+    /*display: flex;*/
+    padding: .5rem .75rem;
+}
+
+label{
+    padding-bottom: .5rem;
+}
+input{
+    padding: 0.5rem;
+}
+
+input[type=text],label,select{
+    width: 100%;
+}
+
+/*481px a 1024px*/
+@media (min-width:481px) {
+    form{
+        flex-direction: row;
+        /*flex-wrap: wrap;*/
+        /*flex-flow: row wrap;*/
+        justify-content: space-evenly;
+    }
+    .grupo{
+        width: 45%;
+    }
+}
+
+/*1025px en adelante*/
+@media (min-width:1025px) {
+    
+}

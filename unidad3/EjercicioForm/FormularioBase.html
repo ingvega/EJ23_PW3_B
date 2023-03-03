@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <h3>Datos generales del aspirante</h3>
+    <form>
+        <div class="grupo">
+            <label for="txtNombre">Nombre</label>
+            <input type="text" placeholder="Nombre" id="txtNombre" name="txtNombre" required>
+        </div>
+        <div class="grupo">
+            <label for="txtApellido1">Primer apellido</label>
+            <input type="text" placeholder="Primer apellido" id="txtApellido1" name="txtApellido1" required>
+        </div>
+        <div class="grupo">
+            <label for="txtApellido2" >Segundo apellido</label>
+            <input type="text" placeholder="Segundo apellido" id="txtApellido2" name="txtApellido2">
+        </div>
+        <div class="grupo">
+            <label for="txtCurp">CURP</label>
+            <input type="text"  placeholder="CURP" id="txtCurp"  name="txtCurp" maxlength="18" required>
+        </div>
+        <div class="grupo">
+            <label for="txtFecha">Fecha de nacimiento</label>
+            <input type="text" id="txtFecha" value="--/--/--">
+        </div>
+        <div class="grupo">
+            <label for="cboEdoCivil">Estado Civil</label>
+            <select id="cboEdoCivil" name="cboEdoCivil">
+                <option disabled selected>Selecciona una opción</option>
+                <option>Soltero(a)</option>
+                <option>Casado(a)</option>
+                <option>Unión libre</option>
+                <option>Divorciado(a)</option>
+                <option>Viudo(a)</option>
+                <option>No especificado</option>
+            </select>
+        </div>
+        <h5>Género</h5>
+            
+        <label for="rbtMasculino">
+            <input type="radio" id="rbtMasculino" name="rbtGenero" value="H">
+            Masculino
+        </label>
+        <label for="rbtFemenino">
+            <input type="radio" id="rbtFemenino" name="rbtGenero" value="M">
+            Femenino
+        </label>
+
+
+        <h5>
+            Nacionalidad
+        </h5>
+        
+        <label for="rbtMexicana">
+            <input type="radio" id="rbtMexicana" name="rbtNacionalidad" value="Mexicana" checked>
+            Mexicana         
+        </label>
+        <labelfor="rbtExtranjero">
+            <input type="radio" id="rbtExtranjero" name="rbtNacionalidad" value="Extranjera">
+            Extranjero
+        </label>
+        <label for="cboEstado">Estado</label>
+        <select id="cboEstado" name="cboEstado">
+            <option disabled selected>Selecciona una opción</option>
+            <option>Michoacan</option>
+        </select>
+        <label for="cboMunicipio">Municipio</label>
+        <select id="cboMunicipio" name="cboMunicipio">
+            <option disabled selected>Selecciona una opción</option>
+        </select>
+        <label for="cboPais">País</label>
+        <select id="cboPais" name="cboPais">
+            <option disabled selected>Selecciona una opción</option>
+        </select>
+    </form>
+
+</body>
+</html>
