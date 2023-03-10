@@ -1,0 +1,19 @@
+:root{
+    --color-principal: rgb(11, 11, 147);
+}
+
+nav .container-fluid {
+    height: 96px;
+}
+.btn-primary{
+    background: var(--color-principal);
+}
+
+.btn-white{
+    background: white;
+    color: var(--color-principal);
+}
+
+.btn-white:hover{
+    background: rgb(234, 241, 246);
+}
