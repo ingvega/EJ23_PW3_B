@@ -1,10 +1,11 @@
 :root{
     --color-principal: rgb(11, 11, 147);
 }
-
+/*
 nav .container-fluid {
     height: 96px;
 }
+*/
 .btn-primary{
     background: var(--color-principal);
 }
