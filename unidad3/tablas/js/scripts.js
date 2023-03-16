@@ -1,5 +1,9 @@
-$(document).ready(function () {
-    $('#listaEmpleados').DataTable();
+
+
+window.addEventListener("DOMContentLoaded",()=>{
+
+    $('#listaEmpleados').DataTable({});
+
     console.log($('button'));
     //$('button').attr("disabled","true");
     $('button').css("color","blue");
@@ -9,7 +13,7 @@ $(document).ready(function () {
         +'    Apellidos: ' + $("#txtApellidos").val()
         +'    Email: ' + $("#txtEmail").val();
 
-        valores='Nombre: ' + $("#txtNombre")[0].value
+        valores='Nombre: ' + $("#txtNombres")[0].value
         +'    Apellidos: ' + $("#txtApellidos")[0].value
         +'    Email: ' + $("#txtEmail")[0].value;
         alert(valores);
