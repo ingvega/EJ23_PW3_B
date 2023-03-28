@@ -28,11 +28,16 @@ $(document).ready(()=>{
     $("#tblEmpleados").DataTable({
         data:datos2,
         columns:[
+            {title:'Operaciones',data:null,render:(data,type)=>{
+                return '<button type="button" onclick="eliminar('+
+                data.id+')">Eliminar</button>';
+            }},
             {title:'Clave', data:'id'},
             {title:'Nombre', data:'nombre'},
             {title:'Apellidos', data:'apellidos'},
             {title:'Oficina', data:'oficina'},
-            {title:'Correo', data:'email'}
+            {title:'Correo', data:'email'},
+            
         ],
         responsive: true,
         columnDefs:[
@@ -41,3 +46,8 @@ $(document).ready(()=>{
         ]
     });
 });
+
+function eliminar(id){
+    alert(id);
+
+}
