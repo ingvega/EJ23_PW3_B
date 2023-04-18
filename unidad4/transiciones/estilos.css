@@ -1,0 +1,42 @@
+button{
+    padding: .7rem;
+    margin-left: .5rem;
+    border-radius: 5px;
+    background: rgb(2, 57, 99);
+    color: white;
+}
+
+button:first-child{
+    margin-left: 0;
+}
+
+#div2{
+    top: 148px;
+}
+
+
+
+div{
+    /*position: absolute;*/
+    /*width: 50%;*/
+    background-color: rgb(14, 119, 98);
+    color: #fff;
+    padding: 2rem;
+    border: 2px solid rgb(3, 77, 74);
+    margin-top: 2rem;
+    transition-property: background-color, width, transform;
+    transition-duration: 1s;
+}
+
+/*No recomendado aplicar un hover cuando un elemento decrementa
+su tamaño o se mueve de ubicación, por la pérdida del cursor
+sobre el area activa del elemento*/
+#div1:hover{
+    background-color: rgb(7, 10, 110);
+    /*No aplica transición cuando no hay un valor original o diferente
+    asignado previamente al div1*/
+
+    /*width: 30%;
+    height: 200px;*/
+    transform: scaleY(2);
+}
