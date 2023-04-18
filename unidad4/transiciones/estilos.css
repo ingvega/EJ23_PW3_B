@@ -18,21 +18,22 @@ button:first-child{
 
 div{
     /*position: absolute;*/
-    /*width: 50%;*/
+    width: 100%;
     background-color: rgb(14, 119, 98);
     color: #fff;
     padding: 2rem;
     border: 2px solid rgb(3, 77, 74);
     margin-top: 2rem;
-    transition-property: background-color, width, transform;
+    transition-property: background-color, width, transform, color;
     transition-duration: 1s;
+    transform-origin: left;
 }
 
 /*No recomendado aplicar un hover cuando un elemento decrementa
 su tamaño o se mueve de ubicación, por la pérdida del cursor
 sobre el area activa del elemento*/
 #div1:hover{
-    background-color: rgb(7, 10, 110);
+    background-color: rgb(7, 10, 110)!important;
     /*No aplica transición cuando no hay un valor original o diferente
     asignado previamente al div1*/
 

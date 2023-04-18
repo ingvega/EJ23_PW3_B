@@ -12,7 +12,7 @@
     <button type="button" onclick="cambiarColor()">Cambiar color texto</button>
     <button type="button" onclick="crecer()">Crecer</button>
     <button type="button" onclick="reducir()">Reducir</button>
-    <button type="button">Cambiar ubicación</button>
+    <button type="button" onclick="trasladar()">Cambiar ubicación</button>
     <button type="button">Regresar a posición inicial</button>
     
     
@@ -21,18 +21,38 @@
     
     <script>
         function cambiarFondo(){
-            
+            //css margin-left
+            //js marginLeft
+            document.querySelector("#div1").style.backgroundColor =
+            "red";
+            //El primer div que encuentra
+            //document.querySelector("div div")
+            //Todos los divs que encuentra
+            //document.querySelectorAll("div")
         }
 
         function cambiarColor(){
-            
+            document.querySelector("#div1").style.color =
+            "black";
         }
 
         function crecer(){
-            
+            //document.querySelector("#div1").style.width =
+            //"200%";
+            document.querySelector("#div1").style.transform =
+            "scaleX(2)";
         }
 
         function reducir(){
+            /*document.querySelector("#div1").style.width =
+            "70%";*/
+            document.querySelector("#div1").style.transform =
+            "scaleX(.7)";
+        }
+
+        function trasladar(){
+            document.querySelector("#div1").style.transform =
+            "translateX(400px)";
 
         }
     </script>
