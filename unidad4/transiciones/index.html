@@ -13,7 +13,7 @@
     <button type="button" onclick="crecer()">Crecer</button>
     <button type="button" onclick="reducir()">Reducir</button>
     <button type="button" onclick="trasladar()">Cambiar ubicación</button>
-    <button type="button">Regresar a posición inicial</button>
+    <button type="button" onclick="trasladar2()">Regresar a posición inicial</button>
     
     
     <div id="div1">Este elemento tiene transiciones</div>
@@ -53,6 +53,11 @@
         function trasladar(){
             document.querySelector("#div1").style.transform =
             "translateX(400px)";
+
+        }
+        function trasladar2(){
+            document.querySelector("#div1").style.transform =
+            "translateX(0px)";
 
         }
     </script>
