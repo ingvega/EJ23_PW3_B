@@ -22,11 +22,15 @@ div{
     background-color: rgb(14, 119, 98);
     color: #fff;
     padding: 2rem;
+
     border: 2px solid rgb(3, 77, 74);
     margin-top: 2rem;
-    transition-property: background-color, width, transform, color;
-    transition-duration: 1s;
+    transition: 1s linear all;
+    /*transition-property: background-color, width, transform, color;
+    transition-duration: 1s;*/
     transform-origin: left;
+
+
 }
 
 /*No recomendado aplicar un hover cuando un elemento decrementa
