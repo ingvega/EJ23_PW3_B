@@ -1,0 +1,21 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.letrero{
+    display: flex;
+    justify-content: center;
+    perspective: 600px;
+    perspective-origin: center bottom;
+}
+
+.letrero div{
+    font-size: 7rem;
+    background: rgb(192, 223, 229);
+    width: 8rem;
+    text-align: center;
+    border: 1px solid #000;
+    transform: rotateX(84deg);
+}
