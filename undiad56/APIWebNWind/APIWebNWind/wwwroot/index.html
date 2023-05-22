@@ -20,7 +20,7 @@
     <script src="https://cdn.datatables.net/rowgroup/1.3.1/js/dataTables.rowGroup.min.js"></script>
     <script>
 
-        fetch("Product/GetProductsNodiscontinued2")
+        fetch("Product/GetActivos2Metodos")
             .then(response => response.json())
             .then(info => {
                 var table = $('#tblProductos').DataTable({
@@ -31,10 +31,13 @@
                                 title: 'Producto', data: 'nombre', render: $.fn.dataTable.render.text()
                             },
                             {
-                                title: 'Categoria', data: 'categoria', render: $.fn.dataTable.render.text()
+                                title: 'Precio', data: 'precio', render: $.fn.dataTable.render.number()
                             },
                             {
-                                title: 'Existencias', data: 'existencias', render: $.fn.dataTable.render.number()
+                                title: 'Categoría', data: 'categoria', render: $.fn.dataTable.render.text()
+                            },
+                            {
+                                title: 'Unidades', data: 'unidades', render: $.fn.dataTable.render.number()
                             }
                         ],
                     dom: 'Bfrtip',
@@ -42,14 +45,14 @@
                     buttons: [
                         'colvis'
                     ],
-                    order: [[1, 'asc']],
+                    order: [[2, 'asc']],
                     rowGroup: {
                         startRender: null,
                         endRender: function (rows, group) {
                             
                             var sum = rows
                                 .data()
-                                .pluck('existencias')
+                                .pluck('unidades')
                                 .reduce(function (a, b) {
                                     return a + b;
                                 }, 0);

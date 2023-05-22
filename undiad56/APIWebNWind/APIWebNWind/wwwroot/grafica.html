@@ -12,7 +12,7 @@
     <script type="text/javascript">
         google.charts.load('current', { 'packages': ['corechart'] });
         google.charts.setOnLoadCallback(() => {
-            fetch("Product/GetInventarioCategoria",
+            fetch("Product/InventarioXCategoria",
                 {
                     headers: { "Content-Type": "application/json" },
                     credentials: 'include'
@@ -34,14 +34,14 @@
 
             var data1 = new google.visualization.DataTable();
             data1.addColumn('string', 'Categoria');
-            data1.addColumn('number', 'Value');
+            data1.addColumn('number', 'Inventario');
 
             var arrDatos = [];
 
             arrDatos.push(['Categoria', 'Inventario']);
             info.forEach(f => {
-                data1.addRow([f.categoria, f.inventario]);
-                arrDatos.push([f.categoria, f.inventario]);
+                data1.addRow([f.categoria, f.valorInventario]);
+                arrDatos.push([f.categoria, f.valorInventario]);
             });
 
             
@@ -49,7 +49,7 @@
             var data2 = google.visualization.arrayToDataTable(arrDatos);
 
             var options = {
-                title: 'Existencia'
+                title: 'Valor de inventario por categoría'
             };
 
             var chart = new google.visualization.PieChart(document.getElementById('ValorInventario'));
