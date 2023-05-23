@@ -23,7 +23,8 @@
         fetch("Product/GetActivos2Metodos")
             .then(response => response.json())
             .then(info => {
-                var table = $('#tblProductos').DataTable({
+                var idTabla = '#tblProductos';
+                $(idTabla).DataTable({
                     data: info,
                     columns:
                         [
@@ -40,6 +41,35 @@
                                 title: 'Unidades', data: 'unidades', render: $.fn.dataTable.render.number()
                             }
                         ],
+                    "fnRowCallback": function (nRow, aData, iDisplayIndex) {
+                        //Añadir estilo a una fila o columna dependiendo de algún valor
+
+                    },
+                    "fnInitComplete": function (oSettings, json) {
+                        /Configuración de los filtros individuales/
+                        var fila = $(this).children("thead").children("tr").clone();
+                        var pie = $("<tfoot/>").append(fila).css("display", "table-header-group");
+                        $(this).children("thead").after(pie);
+                        $(fila).children().each(function () {
+                            $(this).prop("class", null);
+                        });
+
+                        $(fila).children("th").each(function () {
+                            var title = $(this).text().toLowerCase();
+                            $(this).html('<input type="text" class="filtro form-control input-sm" style="width:90%;" placeholder="Buscar ' + title + '" />');
+                        });
+                        tabla = this;
+                        //Activa el filtrado
+                        tabla.api().columns().eq(0).each(function (colIdx) {
+                            $(idTabla + ' tfoot th:eq(' + colIdx + ') input').on('keyup change', function () {
+                                tabla.api().column(colIdx).search(this.value).draw();
+                            });
+
+                            $('input', tabla.api().column(colIdx).footer()).on('click', function (e) {
+                                e.stopPropagation();
+                            });
+                        });
+                    },
                     dom: 'Bfrtip',
                     colReorder: true,
                     buttons: [
